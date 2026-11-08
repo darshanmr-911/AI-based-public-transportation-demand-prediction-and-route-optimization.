@@ -1,31 +1,31 @@
 
 import pandas as pd
 import joblib
-
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 
-# 1. Load dataset
+# Load dataset
 df = pd.read_excel(
     "Dataset/Harohalli_Passenger_Details.xlsx",
     header=2
 )
 
-# 2. Clean dataset
+# Clean dataset
 df = df.dropna(
     subset=[
         "FROM",
         "TO",
         "SERVICE TYPE",
+        "INTERSTATE/\nINTRASTATE",
         "Total\n(Passengers)"
     ]
 )
 
-# 3. Select input features
+# Features and target
 features = [
     "FROM",
     "TO",
@@ -34,22 +34,16 @@ features = [
 ]
 
 X = df[features]
+y = df["Total\n(Passengers)"]
 
-# 4. Select target
-y = pd.to_numeric(
-    df["Total\n(Passengers)"]
+# Preprocessing
+preprocessor = ColumnTransformer(
+    transformers=[
+        ("categorical", OneHotEncoder(handle_unknown="ignore"), features)
+    ]
 )
 
-# 5. Convert categorical data
-preprocessor = ColumnTransformer([
-    (
-        "encoder",
-        OneHotEncoder(handle_unknown="ignore"),
-        features
-    )
-])
-
-# 6. Create Random Forest model
+# Define model BEFORE using it
 model = Pipeline([
     ("preprocessor", preprocessor),
     ("regressor", RandomForestRegressor(
@@ -58,27 +52,25 @@ model = Pipeline([
     ))
 ])
 
-# 7. Split dataset
+# Split dataset
 X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.2,
-    random_state=42
+    X, y, test_size=0.2, random_state=42
 )
 
-# 8. Train model
+# Train model
 model.fit(X_train, y_train)
 
-# 9. Evaluate model
+# Predict
 predictions = model.predict(X_test)
 
+# Evaluate
 mae = mean_absolute_error(y_test, predictions)
 
 print("Training records:", len(X_train))
 print("Testing records:", len(X_test))
 print("Mean Absolute Error:", round(mae, 2))
 
-# 10. Save model
+# Save model
 joblib.dump(model, "models/passenger_model.pkl")
 
 print("Model trained successfully!")
