@@ -1,0 +1,5 @@
+event_date,depot,event_name,event_type,expected_attendance,distance_km,start_time,end_time,data_source
+2026-11-15,HRH,Local Festival,Festival,5000,5,09:00,21:00,SIMULATED
+2026-11-20,HRH,College Fest,Education,2000,8,10:00,18:00,SIMULATED
+2026-11-18,RMN,Temple Festival,Religious,8000,4,06:00,22:00,SIMULATED
+2026-11-25,RMN,Local Fair,Fair,4000,6,09:00,20:00,SIMULATED
