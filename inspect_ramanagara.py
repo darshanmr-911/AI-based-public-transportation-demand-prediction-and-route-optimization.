@@ -2,7 +2,7 @@ import pandas as pd
 
 file_path = "Dataset/Ramanagara_Depot_Passengers.xlsx"
 
-df = pd.read_excel(file_path, header=2)
+df = pd.read_excel(file_path, header=3)
 
 print("Total rows:", len(df))
 
