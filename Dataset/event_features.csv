@@ -1,0 +1,5 @@
+depot,event_type,expected_attendance,attendance_log,distance_km,event_day,event_month,event_weekday,is_weekend
+HRH,Festival,5000,8.517393171418904,5,15,11,6,1
+HRH,Education,2000,7.601402334583733,8,20,11,4,0
+RMN,Religious,8000,8.987321812850125,4,18,11,2,0
+RMN,Fair,4000,8.294299608857235,6,25,11,2,0
