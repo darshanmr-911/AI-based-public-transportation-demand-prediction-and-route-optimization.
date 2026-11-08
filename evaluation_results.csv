@@ -1,0 +1,12 @@
+FROM,TO,Actual Passengers,Predicted Passengers,Difference
+Kalasipalya,Kollegal,9995.0,10968,973.0
+Harohalli,Banavasi,19743.0,16336,3407.0
+Banashankari,Kanakapura,9848.0,9222,626.0
+Harohalli,Hunasanahalli,10439.0,11899,1460.0
+Kalasipalya,Kollegal,13662.0,10968,2694.0
+Kalasipalya,Kollegal,10313.0,10968,655.0
+Banashankari,Kanakapura,14731.0,9222,5509.0
+Maralavadi,Ramanagar,19714.0,27041,7327.0
+Banashankari,Kanakapura,9286.0,9222,64.0
+Kalasipalya,Kanakapura,11540.0,10266,1274.0
+Kalasipalya,Muttatti,11886.0,11394,492.0
