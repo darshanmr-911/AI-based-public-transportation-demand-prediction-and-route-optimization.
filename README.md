@@ -51,36 +51,37 @@ cd AI-based-public-transportation-demand-prediction-and-route-optimization.
 ```text
 Bus/
 │
-├── .venv/
-├── backend/
 ├── Dataset/
-├── models/
+│   ├── Harohalli_Passenger_Details.xlsx
+│   ├── Ramanagara_Depot_Passengers.xlsx
+│   ├── actual_route_passengers_HRH_RMN.csv
+│   ├── event_data.csv
+│   ├── event_features.csv
+│   ├── event_route_scenarios.csv
+│   ├── event_impact_estimates.csv
+│   └── route_optimization_results.csv
 │
-├── .gitignore
-├── analyze_actual_routes.py
-├── build_event_route_dataset.py
-├── combine_actual_routes.py
-├── compare_models.py
-├── cross_validate_combined.py
-├── cross_validate.py
-├── evaluate_combined_model.py
-├── evaluate.py
-├── evaluation_results.csv
-├── event_features.py
-├── event_impact.py
-├── inspect_actual_routes.py
-├── inspect_data.py
-├── inspect_harohalli_months.py
-├── inspect_ramanagara_months.py
-├── inspect_ramanagara.py
-├── inspect_ramanagara.py.
-├── predict_combined_model.py
+├── models/
+│   ├── passenger_model.pkl
+│   └── combined_passenger_model.pkl
+│
+├── backend/
+│   ├── config/
+│   └── transport/
+│
+├── train.py
 ├── predict.py
-├── README.md
-├── requirements.txt
-├── route_optimizer.py
+├── evaluate.py
+├── cross_validate.py
 ├── train_combined_model.py
-└── train.py
+├── predict_combined_model.py
+├── compare_models.py
+├── event_impact.py
+├── route_optimizer.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
 ```
 
 ## 🚌 Dataset Information
